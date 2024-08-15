@@ -13,6 +13,7 @@ router.post('/create', verifyUser, async (req, res) => {
 
         const { BlogName,content } = req.body;
         console.log(req.body)
+        //incase the blogs find duppi
         // const BlogExist = await getBlog({ BlogName: BlogName, status: 'ACTIVE' });
         
         // if (BlogExist && BlogExist.length>0  ) {
