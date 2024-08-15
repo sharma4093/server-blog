@@ -91,6 +91,12 @@ import { makeResponse } from '../lib/response/index.js';
       await makeResponse(res, 400, false, 'Error While Changing Password', error);
     }
   });
+
+  // Check is user is logged in or not
+router.get("/is-logged-in", verifyUser, async (req, res) => {
+  await makeResponse(res, 200, true, "User is logged in", req.user);
+});
+
   
   export const userController = router;
   
