@@ -20,6 +20,14 @@ app.use(cors({
   credentials: true
 }));
 
+app.get("/" , (req,res)=>{
+  res.status(200).send({
+    success : true,
+    message : "Blog App Server is running fine"
+  })
+})
+
+
 connectDB()
   .then(() => {
     app.listen(process.env.PORT, () => {
