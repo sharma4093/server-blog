@@ -13,12 +13,11 @@ router.post('/create', verifyUser, async (req, res) => {
 
         const { BlogName,content } = req.body;
         console.log(req.body)
-        const BlogExist = await getBlog({ BlogName: BlogName, status: 'ACTIVE' });
-        console.log('line 17')
+        // const BlogExist = await getBlog({ BlogName: BlogName, status: 'ACTIVE' });
         
-        if (BlogExist && BlogExist.length>0  ) {
-            return makeResponse(res, 400, false, 'Blog already exists with this name', BlogExist);
-        }
+        // if (BlogExist && BlogExist.length>0  ) {
+        //     return makeResponse(res, 400, false, 'Blog already exists with this name', BlogExist);
+        // }
 
         const BlogCreate = await createBlog({ BlogName: BlogName, content: content, _user: req.user._id });
 
